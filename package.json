@@ -1,0 +1,26 @@
+{
+  "name": "@18f/18f-eslint",
+  "version": "1.0.0",
+  "description": "Easy eslint for 18F projects",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "lint": "npx -p . 18f-eslint ."
+  },
+  "keywords": [
+    "18f",
+    "eslint"
+  ],
+  "author": "Greg Walker <greg.walker@gsa.gov>",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2"
+  }
+}
