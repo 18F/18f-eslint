@@ -31,6 +31,11 @@ const run = async (lintPaths) => {
     const formatter = await eslint.loadFormatter("stylish");
     const resultText = formatter.format(results);
     console.log(resultText);
+
+    // Non-zero exit if there are errors.
+    if (results.some((result) => result.errorCount > 0)) {
+      process.exit(1);
+    }
   } catch (e) {
     // If the eslint base configs and/or plugins are not installed locally in
     // the project being linted, the constructor above will throw an exception.
