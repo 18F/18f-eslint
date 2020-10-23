@@ -56,6 +56,29 @@ eslint as a base, and your local, project-level configurations will supercede
 it. By default, it's probably safest not to define an `env` or `extends`
 property in your own config file, but you certainly can if necessary.
 
+If your project is written for ES5 or below, install [eslint-config-airbnb-base/legacy](https://www.npmjs.com/package/eslint-config-airbnb-base#eslint-config-airbnb-baselegacy))
+and update your `eslintrc` file to include it in the `extends` property.
+
+The script determins whether or not your project project is a React project by
+finding the nearest `package.json` and looking for `react` in either your
+dependencies or dev-dependencies.
+
+## Under the hood
+
+The 18F eslint wrapper imports our recommended eslint rules and plugins,
+those specified by the [Airbnb JavaScript style guide](https://github.com/airbnb/javascript).
+
+- For all projects
+  - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+- For React projects:
+  - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+  - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+  - [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+  - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+- For ES6/2015 projects that don't use React:
+  - [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
+  - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+
 ### Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in
