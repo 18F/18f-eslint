@@ -7,9 +7,12 @@ to make it easier to get started. To use, first install:
 npm install @18f/eslint
 ```
 
-This will install all the appropriate base configurations and plugins. (Since
-eslint 6, installing these in your local project is recommended, even if you're
-using a globally-installed eslint or running with `npx`.)
+This will install all the appropriate base configurations, plugins, and
+prettier. (Since eslint 6, installing these in your local project is
+recommended, even if you're using a globally-installed eslint or running with
+`npx`.) It will also create (or update) a `.eslintrc` file with the base
+configuration and add a `prettier` configuration to your `package.json. (This is
+primarily to enable code editors to pick it up.)
 
 To run the 18F-configured eslint on your application, you can either use `npx`,
 or add it as a script to your `package.json`. By default, it will lint all
@@ -63,6 +66,22 @@ The script determins whether or not your project project is a React project by
 finding the nearest `package.json` and looking for `react` in either your
 dependencies or dev-dependencies.
 
+## GitHub Action
+
+There is a [GitHub Action](https://github.com/18F/18f-eslint-action) that makes
+it easy to add 18F-eslint to your CI/CD pipeline. In addition, this package can
+configure the action for you:
+
+```shell
+npx -p @18f/18f-eslint install-action
+```
+
+This will add an 18F-eslint GitHub action to your repo for each `package.json`
+file. If you have a monorepo, it should more-or-less just work. It defaults to
+linting all Javascript files under each path, but you can tweak the workflow
+to suit your needs. See the [documentation](https://github.com/18F/18f-eslint-action)
+for more info about configuration the action.
+
 ## Under the hood
 
 The 18F eslint wrapper imports our recommended eslint rules and plugins,
@@ -70,6 +89,7 @@ those specified by the [Airbnb JavaScript style guide](https://github.com/airbnb
 
 - For all projects
   - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+  - [prettier](https://prettier.io/)
 - For React projects:
   - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
   - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)

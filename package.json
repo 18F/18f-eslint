@@ -1,11 +1,15 @@
 {
   "name": "@18f/18f-eslint",
-  "version": "1.1.0",
+  "version": "1.2.3",
   "description": "Easy eslint for 18F projects",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "install-action": "install-action.js",
+    "18f-eslint": "index.js"
+  },
   "scripts": {
-    "lint": "npx -p . 18f-eslint ."
+    "lint": "eslint '**/*.js'",
+    "postinstall": "./install.js"
   },
   "keywords": [
     "18f",
@@ -21,9 +25,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.4",
-    "eslint-plugin-react-hooks": "^4.1.2"
-  },
-  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.1.2",
     "prettier": "^2.1.2"
   },
   "prettier": {}

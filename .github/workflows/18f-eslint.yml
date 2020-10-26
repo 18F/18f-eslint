@@ -1,0 +1,15 @@
+name: lint action
+
+on: [pull_request]
+
+jobs:
+  lint:
+    name: 18F ESLint
+    runs-on: ubuntu-latest
+    container: node:14
+    steps:
+      - uses: actions/checkout@af513c7a
+      - name: install dependencies
+        run: npm install
+      - name: lint
+        run: npm run lint
