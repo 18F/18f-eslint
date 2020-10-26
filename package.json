@@ -1,6 +1,6 @@
 {
   "name": "@18f/18f-eslint",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Easy eslint for 18F projects",
   "main": "index.js",
   "bin": {

@@ -3,6 +3,11 @@ const fs = require("fs");
 const path = require("path");
 const hasReact = require("./lib/hasReact");
 
+const npx = /\/_npx\//.test(process.env.npm_config_globalconfig);
+if (npx) {
+  process.exit(0);
+}
+
 const pathRoot = process.env.INIT_CWD || path.resolve("../../", __dirname);
 
 const eslintPath = path.join(pathRoot, ".eslintrc.json");
