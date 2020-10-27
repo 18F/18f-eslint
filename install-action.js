@@ -98,7 +98,7 @@ jobs:
       - uses: actions/checkout@af513c7a
 ${paths
   .map(
-    (dir) => `      - uses: 18f/18f-eslint-action@v1.0.0
+    (dir) => `      - uses: 18f/18f-eslint-action@v1.1.0
         with:
           lint-glob: "**/*.js"
           working-directory: ${dir}`
