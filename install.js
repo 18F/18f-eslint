@@ -4,7 +4,7 @@ const path = require("path");
 const hasReact = require("./lib/hasReact");
 
 const npx = /\/_npx\//.test(process.env.npm_config_globalconfig);
-if (npx) {
+if (npx || process.env.CI) {
   process.exit(0);
 }
 
