@@ -11,7 +11,7 @@ This will install all the appropriate base configurations, plugins, and
 prettier. (Since eslint 6, installing these in your local project is
 recommended, even if you're using a globally-installed eslint or running with
 `npx`.) It will also create (or update) a `.eslintrc` file with the base
-configuration and add a `prettier` configuration to your `package.json. (This is
+configuration and add a `prettier` configuration to your `package.json`. (This is
 primarily to enable code editors to pick it up.)
 
 To run the 18F-configured eslint on your application, you can either use `npx`,
